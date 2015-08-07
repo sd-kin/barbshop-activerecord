@@ -7,6 +7,9 @@ require 'sinatra/activerecord'
 set :database, "sqlite3:barbershop.db"
 
 class Client<ActiveRecord::Base
+validates :name, presence: true
+validates :phone, presence: true
+validates :datestamp, presence: true
 end
 
 class Barber<ActiveRecord::Base
@@ -34,7 +37,7 @@ end
 post'/visit' do
 client = Client.new params[:client]
 client.save if client.new_record?
-
-erb :visit
+@error=client.errors.full_messages.first unless client.valid? 
+return erb :visit
 end 
 
