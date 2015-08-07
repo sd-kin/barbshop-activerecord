@@ -32,12 +32,7 @@ erb :visit
 end
 
 post'/visit' do
-@name=params[:name]
-@phone=params[:phone]
-@color=params[:color]
-@date=params[:date]
-@barber=params[:barber]
-client = Client.new(name: @name, phone: @phone, color: @color, datestamp: @date, barber: @barber)
+client = Client.new params[:client]
 client.save if client.new_record?
 
 erb :visit

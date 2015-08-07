@@ -26,21 +26,21 @@
 	<body>
 		<form action="/visit" method="POST">
 		Input you name:
-		<input  class="form-control" name="name" type="text" value="<%= @name %>">
+		<input  class="form-control" name="client[name]" type="text" value="<%= @name %>">
 		
 		
 		
 		Input you phone number:
-		<input  class="form-control" name="phone" type="text" value="<%= @phone %>" >
+		<input  class="form-control" name="client[phone]" type="text" value="<%= @phone %>" >
 		
 		
 		
 		Input day of visiting:
-		<input  class="form-control" type="text" name="date" id="datetimepicker" value="<%= @date %>" >
+		<input  class="form-control" type="text" name="client[datestamp]" id="datetimepicker" value="<%= @date %>" >
 		
 		select youre barber
 		
-		<select class="form-control" name="barber">
+		<select class="form-control" name="client[barber]">
 		  <% @barbers.each do |barber|%>
 		  
 		  <option <%= @barber==barber.name ? 'selected' : ''%> ><%= barber.name %></option>
@@ -57,7 +57,7 @@
 		
 		 <div>
 <label for="color1">Color 1</label>
-		 <input id="color1" type="text" name="color" value="#333399" />
+		 <input id="color1" type="text" name="client[color]" value="#333399" />
 		 </div>
 		 
 		
