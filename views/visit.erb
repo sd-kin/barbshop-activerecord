@@ -26,17 +26,17 @@
 	<body>
 		<form action="/visit" method="POST">
 		Input you name:
-		<input  class="form-control" name="client[name]" type="text" value="">
+		<input  class="form-control" name="client[name]" type="text" value="<%= @client.name%>">
 		
 		
 		
 		Input you phone number:
-		<input  class="form-control" name="client[phone]" type="text" value="<%= @phone %>" >
+		<input  class="form-control" name="client[phone]" type="text" value="<%= @client.phone %>" >
 		
 		
 		
 		Input day of visiting:
-		<input  class="form-control" type="text" name="client[datestamp]" id="datetimepicker" value="<%= @date %>" >
+		<input  class="form-control" type="text" name="client[datestamp]" id="datetimepicker" value="<%= @client.datestamp %>" >
 		
 		select youre barber
 		
