@@ -1,4 +1,4 @@
-class CreateClients < ActiveRecord::Migration
+class CreateClients1 < ActiveRecord::Migration
   def change
   create_table :clients do |t|
   t.text :name
