@@ -19,10 +19,12 @@ Barber.first_or_create :name=>'Walter White'
 Barber.first_or_create :name=>'Goose Freeng'
 Barber.first_or_create :name=>'Tom Cruse'
 Barber.first_or_create :name=>'Jesie Pinkman'
+
 end
 before do
 @clients=Client.all
 @barbers=Barber.all
+@client=Client.new
 end
 
 get '/' do
@@ -47,5 +49,15 @@ end
 
 
 get"/barbers/:id" do
-erb "personal baeber page"
+@barber=Barber.find(params[:id])
+erb :barber
+end
+
+get"/bookings/:id" do
+@client=Client.find(params[:id])
+erb :client
+end
+
+get "/bookings" do
+erb :bookings
 end
