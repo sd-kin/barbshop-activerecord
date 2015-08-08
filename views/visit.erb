@@ -43,7 +43,7 @@
 		<select class="form-control" name="client[barber]">
 		  <% @barbers.each do |barber|%>
 		  
-		  <option <%= @barber==barber.name ? 'selected' : ''%> ><%= barber.name %></option>
+		  <option <%= @client.barber==barber.name ? 'selected' : ''%> ><%= barber.name %></option>
 		  
 		  <%end%>
 		</select>
