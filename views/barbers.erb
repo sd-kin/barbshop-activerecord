@@ -1,0 +1,13 @@
+ <!DOCTYPE html>
+ <html> 
+ <head></head>
+ <body>
+ <ul>
+ <% @barbers.each do |barber|%>
+		  <li>
+		  <a href="/barbers/<%=barber.id%>"> <%= barber.name%> </a>
+		  </li>
+		  <%end%>
+<ul>
+</body>		  
+<html>

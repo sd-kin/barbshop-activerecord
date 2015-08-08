@@ -41,3 +41,11 @@ post'/visit' do
 return erb :visit
 end 
 
+get "/barbers" do
+erb :barbers
+end
+
+
+get"/barbers/:id" do
+erb "personal baeber page"
+end
